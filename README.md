@@ -1,4 +1,4 @@
-# Masked Language Modeling for the Federated Health project
+# AIDA Technical Days Federated Learning Example
 
 This repository contain code to train an XLMRoberta model using masked language modelling and LoRA fine tuning. The code is based on the [NLP-NER](https://github.com/NVIDIA/NVFlare/tree/main/examples/advanced/nlp-ner) example, incorporating code from the Huggingface [run_mlm.py](https://github.com/huggingface/transformers/blob/main/examples/pytorch/language-modeling/run_mlm_no_trainer.py) scripts.
 
@@ -9,7 +9,7 @@ As example datasets, the code uses works of Jane Austen and Shakespeare.
 
 The suggested installation creates a virtual environment which you will use to run you federated learning client. All code run in the federated environment _must_ be pre-installed on the system, the federation will not allow arbitrary code to be executed on the nodes.
 
-For convencience, the code for the experiment can be installed as a "development" package. This means that any changes to the code will automatically be reflected in the environment package (e.g. by doing a `git pull`, you don't have to remember to reinstall the package).
+For convenience, the code for the experiment can be installed as a "development" package. This means that any changes to the code will automatically be reflected in the environment package (e.g. by doing a `git pull`, you don't have to remember to reinstall the package).
 
 Start by cloning this repo:
 ```shell
@@ -48,8 +48,6 @@ $ source .venv/bin/activate
 
 You will also need the model [from huggingface](https://huggingface.co/FacebookAI/xlm-roberta-base). 
 
-<!--Download the model from the project sharepoint (`WP2_health_data_space/T2.2_federated_infrastructure/fl_infrastructure/nvidia_flare/models/xlm-roberta-base.tar.gz`). Download this file and extract it to some directory (e.g. `models/xlm-roberta`).-->
-
 Download the model by using the Huggingface CLI (should have been installed with the environment):
 ```shell
 $ hf download FacebookAI/xlm-roberta-base --local-dir models/xlm-roberta-base
@@ -58,7 +56,6 @@ $ hf download FacebookAI/xlm-roberta-base --local-dir models/xlm-roberta-base
 ## Dataset
 
 The datasets are expected to be regular text files (UTF-8 encoded) with the training examples. In the aiMPLANT demonstrator, the files is organized with one line per patient, with the clinical notes for each patient concatenated sequentially according to date of the note. Do note that sequences of text will follow new-lines, so the context window for MLM will not include text spanning multiple lines. 
-
 
 ## Configuration
 
