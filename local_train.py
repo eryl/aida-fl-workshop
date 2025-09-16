@@ -12,7 +12,7 @@ from tqdm import trange, tqdm
 import sys
 
 
-APP_PATH = Path('apps')/ 'xlmroberta_mlm'
+APP_PATH = Path('federatedhealth_mlm_job') / 'app'
 
 from federatedhealth.nlp_models import XLMRobertaModel
 from federatedhealth.config import load_config
