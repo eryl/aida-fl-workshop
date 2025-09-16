@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    
+    "configurations": [
+        {
+            "name": "Python Debugger: nvflare",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/erik/src/aida-fl-workshop/.venv/bin/nvflare",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {},
+            "args": ["simulator", "federatedhealth_mlm_job", "-w", "/tmp/nvflare/workspaces/xlmroberta-mlm", "-n 2", "-t", "1", "-gpu", "0"]
+        },
+        {
+            "name": "Python Debugger: local train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "local_train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            },
+        
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

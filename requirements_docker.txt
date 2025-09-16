@@ -1,0 +1,7 @@
+nvflare==2.4
+transformers
+datasets
+evaluation
+peft
+tensorboard
+

@@ -1,0 +1,7 @@
+.venv
+models
+local_training
+__pycache__
+*.egg-info
+*.lock
+*Zone.Identifier
